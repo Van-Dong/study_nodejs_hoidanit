@@ -1,0 +1,20 @@
+{
+  "name": "backend-nodejs",
+  "version": "1.0.0",
+  "description": "Hoc Nodejs with hoidanit",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "react"
+  ],
+  "author": "Van Dong",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "3.1.8",
+    "express": "4.18.2"
+  }
+}
