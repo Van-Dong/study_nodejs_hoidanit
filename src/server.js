@@ -1,21 +1,19 @@
 const express = require('express')
 const path = require('path')
+require('dotenv').config()
+const configViewEngine = require('./config/viewEngine')
+const webRoutes = require('./route/web')
+
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
+const hostname = process.env.HOSTNAME
 
-// Config template engine
-console.log(__dirname)
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'ejs')
+// Config template engine 
+configViewEngine(app)
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+// route
+app.use('/test', webRoutes)
 
-app.get('/abc', (req, res) => {
-    res.render('sample')
-})
-
-app.listen(port, () => {
+app.listen(port, hostname, () => {
   console.log(`Example app listening on port ${port}`)
 })
